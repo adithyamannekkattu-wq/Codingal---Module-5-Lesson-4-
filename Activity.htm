@@ -1,0 +1,78 @@
+<html>
+    <head>
+        <title>
+            Arrays
+        </title>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    </head>
+
+    <body class="bg-secondary">
+
+        <h1 class="bg-primary">Playlist Sorter</h1><br><br>
+
+        <div class="container bg-danger">
+            <button onclick="sr()" style="margin:10px;">Arrange in alphabetic order</button><button onclick="st()">Arrange in reverse order</button><br>
+            <span id="c1" style="margin:10px;"></span>
+
+        </div><br><br>
+
+        <div class="container bg-warning">
+            <button onclick="vi()" style="margin:10px;">Show views in ascending order</button><button onclick="view()">Show views in descending order</button><br>
+            <span id="c2" style="margin:10px;"></span>
+
+        </div><br><br>
+
+        <div class="container bg-success">
+            <button onclick="pl()" style="margin:10px;">Show number of plays</button><br>
+            <span id="c3" style="margin:10px;"></span>
+
+        </div><br><br>
+
+
+        <script>
+
+            songs=["Golden Hour", "Sailor song", "Rush E", "Fur Elise"];
+            songs.sort();
+            var rev=songs.reverse();
+            var stra=songs.sort();
+
+            views=[40000055, 3453532, 120090909, 121242];
+            var ascendin=views.sort(function (a, b){ return a-b });
+            var descendin=views.sort(function (a, b){ return b-a });
+
+            var newa=views.map(function(count){
+                return count+"  plays ";
+            });
+
+            function sr(){
+                document.getElementById("c1").innerHTML=stra;
+            }
+            function st(){
+                document.getElementById("c1").innerHTML=rev;
+            }
+
+            function vi(){
+                document.getElementById("c2").innerHTML=ascendin;
+            }
+
+            function view(){
+                document.getElementById("c2").innerHTML=ascendin;
+            }
+
+            function pl(){
+                document.getElementById("c3").innerHTML=newa;
+            }
+
+
+
+        </script>
+
+    </body>
+
+</html>
