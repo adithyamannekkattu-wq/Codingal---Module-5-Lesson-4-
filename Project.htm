@@ -1,0 +1,86 @@
+<html>
+
+<head>
+    <title>
+        Activity Sorter
+    </title>
+
+    <style>
+
+        .i{
+            color:bisque;
+            background-color:black
+        }
+
+        button{
+            color:rgb(0, 238, 255);
+            background-color: darkorchid;
+            margin:20px;
+        }
+
+        #c1{
+            color:aquamarine;
+            font-size:20px;
+            margin:20px;
+            background-color: brown;
+            display:flex;
+            justify-self: center;
+        }
+
+    </style>
+
+</head>
+
+<body style="background:linear-gradient(rgba(249, 251, 249, 0.062), #112)">
+
+    <h1>Task Manager</h1><br>
+    <h3>Organize your tasks with Task Manager!</h3>
+
+    <div>
+
+        <label>Task number 1: </label><input class="i" type="text" id="i1"><br>
+        <label>Task number 2: </label><input class="i" type="text" id="i2"><br>
+        <label>Task number 3: </label><input class="i" type="text" id="i3"><br>
+        <label>Task number 4: </label><input class="i" type="text" id="i4"><br>
+        <label>Task number 5: </label><input class="i" type="text" id="i5"><br><br>
+
+        <button onclick="submit()">Submit</button>
+
+    </div><br><br>
+
+    <div>
+        <button onclick="sr()">Arrange in alphabetic order</button><button onclick="st()">Arrange
+            in reverse order</button><br>
+        <span id="c1"></span>
+
+    </div><br><br>
+
+
+
+    <script>
+
+        function submit(){
+            mbranch=[]
+            mbranch.push(document.getElementById("i1").value);
+            mbranch.push(document.getElementById("i2").value);
+            mbranch.push(document.getElementById("i3").value);
+            mbranch.push(document.getElementById("i4").value);
+            mbranch.push(document.getElementById("i5").value);
+
+            return mbranch;
+        }
+
+        function sr(){
+            document.getElementById("c1").innerHTML=mbranch.sort();
+        }
+
+        function st(){
+            document.getElementById("c1").innerHTML=mbranch.reverse(mbranch.sort())
+        }
+
+    </script>
+
+
+</body>
+
+</html>
